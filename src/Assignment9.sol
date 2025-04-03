@@ -9,12 +9,13 @@ contract Assignment9 is Ownable {
     // create a public array called `deployedContracts` to store contracts addresses in it 
     address[] public deployedContracts;
     // call Ownable constructor of openzeppelin contract
-constructor () Ownable() {
+    constructor () Ownable(msg.sender) {
+        
     }
 
     // @dev Factory to deploy new instances of `SimpleContract`
     // make only the owner is the one who can call this function
-    function createContract() external onlyOwner {
+    function createContract() onlyOwner external {
         // deploy new instance of SimpleContract
             // Hint: When you create a new instance, do not forget to pass any arbitrary initial value in the constructor
             SimpleContract newContract = new SimpleContract(100);
