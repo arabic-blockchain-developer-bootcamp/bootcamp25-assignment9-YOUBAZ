@@ -9,8 +9,7 @@ contract Assignment9 {
     // create a public array called `deployedContracts` to store contracts addresses in it 
     address[] public deployedContracts;
     // call Ownable constructor of openzeppelin contract
-    constructor () Ownable(msg.sender){
-        owner = msg.sender;
+constructor () Ownable() {
     }
 
     // @dev Factory to deploy new instances of `SimpleContract`
